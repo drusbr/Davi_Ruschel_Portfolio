@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_pdf_viewer import pdf_viewer
 from scipy.interpolate import RegularGridInterpolator
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import griddata
@@ -1049,4 +1048,5 @@ if st.session_state.get("simulation_done", False):
         tel_col1, tel_col2 = st.columns([1, 2])
         with tel_col1:
             st.pyplot(fig, use_container_width=False)
+
 
