@@ -56,7 +56,7 @@ with st.expander("**Team Manager (from September 2025)**"):
 with st.container():
     fig1_col1, fig1_col2, fig1_col3 = st.columns(3)
     with fig1_col1:
-        st.image("IMG_5620.JPG", caption="Team Picture at the End of the Competition")
+        st.image("IMG_5620.jpg", caption="Team Picture at the End of the Competition")
     with fig1_col2:
         st.image("GBR picture (162).JPG", caption = "Race Team Working During a Race")
     with fig1_col3:
@@ -155,4 +155,5 @@ with st.expander("Read More About my Experience"):
 
     That moment — analysing data under pressure, making the right calls, watching them come to life — it confirmed what I already suspected: **this is what I want to do.**
     """)
+
 
