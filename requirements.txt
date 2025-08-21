@@ -1,3 +1,4 @@
+fastf1
 streamlit
 streamlit-pdf-viewer
 scipy
@@ -5,3 +6,4 @@ matplotlib
 pandas
 numpy
 plotly
+
