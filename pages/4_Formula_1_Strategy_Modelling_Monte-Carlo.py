@@ -636,8 +636,8 @@ st.set_page_config(layout="wide")
 
 st.title("Monte Carlo Simulation Analysis")
 
-st.info("This is a demo version of the final project. Bug fixes are in order to be fixed promptly. However, at its current state, you will be able to enjoy simulating 
-        different races for different number of simulations an visualize the results!")
+st.info("""This is a demo version of the final project. Bug fixes are in order to be fixed promptly. However, at its current state, you will be able to enjoy simulating 
+        different races for different number of simulations an visualize the results!""")
 
 def run_monte_carlo(num_runs, laps, drivers, race):
     df_laps, df_summary = monte_carlo_safety_car(laps, drivers, race, sims=num_runs, seed=42)
@@ -763,3 +763,4 @@ if "mc_results" in st.session_state:
     if st.button("Clear Results"):
 
         st.session_state.pop("mc_results")
+
