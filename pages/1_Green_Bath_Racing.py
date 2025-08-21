@@ -41,17 +41,17 @@ with st.expander("**Race Strategist & Vehicle Performance Engineer**"):
     - **Impact**: The simulation informed our race strategy for the 2025 competition, contributing to a 4th-place finish and setting a new UK national record for efficiency.
     """)
 
-with st.expander("**Team Manager (from September 2025)**"):
-    st.markdown("""
-    - **Goal**: Lead Green Bath Racing into the Shell Eco-marathon 2026 season, overseeing technical development, team organisation, and competition delivery.  
-    - **Planned Focus Areas**:
-        - Coordinate a multidisciplinary team of engineers across powertrain, aerodynamics, telemetry, and strategy to deliver a new prototype vehicle.  
-        - Set and monitor project milestones, ensuring the build, testing, and strategy preparation are aligned with competition deadlines and academic requirements.  
-        - Manage the team’s finances and pursue sponsorship opportunities to fund development, testing, and logistics.  
-        - Act as the main point of contact with University staff and SEM organisers, representing the team externally.  
-        - Build team culture through regular workshops, clear communication, and structured delegation of responsibilities.  
-    - **Expected Impact**: Ensure the team delivers a competitive and reliable vehicle, while strengthening GBR’s long-term professionalism and legacy at the University of Bath.  
-    """)
+# with st.expander("**Team Manager (from September 2025)**"):
+#     st.markdown("""
+#     - **Goal**: Lead Green Bath Racing into the Shell Eco-marathon 2026 season, overseeing technical development, team organisation, and competition delivery.  
+#     - **Planned Focus Areas**:
+#         - Coordinate a multidisciplinary team of engineers across powertrain, aerodynamics, telemetry, and strategy to deliver a new prototype vehicle.  
+#         - Set and monitor project milestones, ensuring the build, testing, and strategy preparation are aligned with competition deadlines and academic requirements.  
+#         - Manage the team’s finances and pursue sponsorship opportunities to fund development, testing, and logistics.  
+#         - Act as the main point of contact with University staff and SEM organisers, representing the team externally.  
+#         - Build team culture through regular workshops, clear communication, and structured delegation of responsibilities.  
+#     - **Expected Impact**: Ensure the team delivers a competitive and reliable vehicle, while strengthening GBR’s long-term professionalism and legacy at the University of Bath.  
+#     """)
 
 with st.container():
     fig1_col1, fig1_col2, fig1_col3 = st.columns(3)
@@ -155,5 +155,6 @@ with st.expander("Read More About my Experience"):
 
     That moment — analysing data under pressure, making the right calls, watching them come to life — it confirmed what I already suspected: **this is what I want to do.**
     """)
+
 
 
