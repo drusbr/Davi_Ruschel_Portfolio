@@ -19,20 +19,6 @@ from matplotlib.collections import LineCollection
 from matplotlib.colors import Normalize
 import io
 
-st.set_page_config(layout="wide")
-st.title("Lap Simulation & Strategy Optimizer - Shell Eco-Marathon Battery Electric Vehicle")
-
-st.subheader("Lap Simulation & Strategy Optimization")
-st.info("I developed this lap simulation program during my Group Design Business Project in the first semester of 2025. The main goal of the simulation is to identify the optimal strategy at a given circuit for the Shell Eco-Marathon")
-
-with st.expander("Key Features"):
-    st.write("""
-            - The simulation is modular and adaptable to any vehicle or circuit. These are easily changed by altering parameters in the code.
-
-            - The simulation              
-
-             """) 
-
 # ================ SIMULATION PROGRAM ================
 # Vehicle Parameters
 vehicle_mass = 79 #71.25 
@@ -1172,6 +1158,7 @@ with tab_results:
                 st.download_button(label=f"⬇️ {label}", data=open(fname, "rb"), file_name=fname, mime="text/csv")
             else:
                 st.button(f"⬇️ {label}", disabled=True)
+
 
 
 
