@@ -129,8 +129,9 @@ st.info("I’m currently targeting graduate roles in **vehicle performance & rac
 st.divider()
 cA, cB = st.columns([0.6, 0.4])
 with cA:
-    st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
+    st.markdown("**Contact**: [LinkedIn](https://www.linkedin.com/in/davi-ruschel-aa6a45244/) • [Email](mailto:daviruschel9@gmail.com)")
 with cB:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
 
 
