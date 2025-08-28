@@ -21,10 +21,10 @@ My work centred on creating tools to **capture, process, and apply data in real 
 with st.expander("📡 Data & Telemetry Engineer"):
     st.markdown("""
     - **Objective**: Build a new telemetry system for testing and competition.  
-    - **Tools**: ESP32 microcontroller, sensors, Python, Google Sheets, Streamlit.  
+    - **Tools**: ESP32 microcontroller, sensors, Python, Google Sheets.  
     - **Key Tasks**:  
-        • Programmed and integrated sensors for temperature, current, and speed monitoring  
-        • Developed a live data dashboard in Streamlit for driver and engineer feedback  
+        • Programmed and integrated sensors for temperature, current, speed and motor performance monitoring  
+        • Developed a live data dashboard for driver and engineer feedback  
         • Designed a 4G cloud-based transmission concept to overcome interference issues  
     - **Impact**: Delivered reliable live-data capture and visualisation, enabling informed adjustments during runs.
     """)
@@ -33,12 +33,12 @@ with st.expander("📡 Data & Telemetry Engineer"):
 with st.expander("🧠 Simulation & Strategy Development"):
     st.markdown("""
     - **Objective**: Optimise vehicle efficiency using a simulation-driven approach.  
-    - **Tools**: Python, NumPy, Pandas, Matplotlib, Streamlit.  
+    - **Tools**: Python, NumPy, Pandas, Matplotlib.  
     - **Key Tasks**:  
         • Built a probabilistic simulation tool modelling vehicle dynamics, energy use, and acceleration strategy  
         • Created a logic-based random strategy generator with constraints (cornering, acceleration zones)  
         • Developed a two-lap evaluation framework to test strategy repeatability  
-        • Conducted sensitivity analysis on factors such as motor efficiency and track gradient  
+        • Conducted sensitivity analysis on factors such as mass and aerodynamic drag 
         • Presented findings to the team and adjusted strategies during live competition  
     - **Impact**: Improved efficiency progressively from **600 → 787 km/kWh** in practice runs, then to **835 km/kWh** in official runs, setting a new national record.
     """)
@@ -54,8 +54,8 @@ with st.container():
 st.subheader("Key Outcomes")
 m1, m2, m3, m4 = st.columns(4)
 with m1: st.metric("National Record", "835 km/kWh")
-with m2: st.metric("Regional Ranking", "4th place (Europe & North Africa)")
-with m3: st.metric("Simulation Accuracy", "±4.3% vs real performance")
+with m2: st.metric("Regional Ranking", "4th Place")
+with m3: st.metric("Simulation Accuracy", "±4.3%")
 with m4: st.metric("Efficiency Improvement", "600 → 835 km/kWh")
 
 # ---- LESSONS ----
@@ -64,7 +64,7 @@ st.info("""
 **Technical & Analytical**  
 - Built and validated a simulation tool with real-world error of only 4.3%  
 - Applied data-driven optimisation to achieve measurable gains across multiple runs  
-- Strengthened knowledge of system dynamics, efficiency trade-offs, and sensitivity analysis  
+- Strengthened knowledge of programming, embedded systems, and sensitivity analysis  
 
 **Problem-Solving & Decision-Making**  
 - Made rapid adjustments under time pressure using imperfect data  
@@ -89,4 +89,5 @@ with st.expander("Personal Reflection"):
     play out in real time confirmed my passion for applying data and engineering tools  
     to deliver performance improvements.
     """)
+
 
