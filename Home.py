@@ -4,9 +4,21 @@ from datetime import date
 st.set_page_config(page_title="Davi Ruschel — Portfolio", layout="wide")
 
 # ---------- small helpers ----------
-def chip(text):  # simple inline tag
-    st.markdown(f"<span style='padding:4px 8px;border:1px solid #ddd;border-radius:999px;font-size:0.85rem;'>{text}</span>",
-                unsafe_allow_html=True)
+def chip(text):
+    st.markdown(
+        f"""
+        <span style="
+            display:inline-block;
+            padding:4px 10px;
+            border:1px solid #e5e7eb;
+            border-radius:999px;
+            background:#f8fafc;
+            font-size:0.85rem;">
+            {text}
+        </span>
+        """,
+        unsafe_allow_html=True,
+    )
 
 def card(title, blurb, link_text, link_url):
     with st.container(border=True):
@@ -14,58 +26,73 @@ def card(title, blurb, link_text, link_url):
         st.markdown(blurb)
         st.link_button(link_text, link_url)
 
-# ---------- HERO ----------
-left, right = st.columns([1.2, 0.8])
-with left:
+# =======================================================================
+# HERO
+# =======================================================================
+col1, col2 = st.columns([1.25, 1], vertical_alignment="center")
+
+with col1:
     st.title("Davi Ruschel")
     st.markdown(
         "Engineer focused on **simulation, optimisation, and data-driven tooling**. "
         "I build models and apps that turn raw data into decisions."
     )
-    c1, c2, c3, c4 = st.columns(4)
-    with c1: st.link_button("📄 CV", "https://your-cv-link.pdf")
-    with c2: st.link_button("💼 LinkedIn", "https://linkedin.com/in/your-handle")
-    with c3: st.link_button("🧪 Projects", "#projects")
-    with c4: st.link_button("✉️ Email", "mailto:you@email.com")
 
-with right:
+    b1, b2, b3, b4 = st.columns(4)
+    with b1: st.link_button("📄 CV", "https://your-cv-link.pdf")
+    with b2: st.link_button("💼 LinkedIn", "https://linkedin.com/in/your-handle")
+    with b3: st.link_button("🧪 Projects", "#projects")
+    with b4: st.link_button("✉️ Email", "mailto:you@email.com")
+
+with col2:
+    st.image(
+        "GBR picture (48).jpeg",
+        caption="Engineering project in competition environment",
+        use_container_width=True,
+    )
     st.write("**Focus areas**")
-    colA, colB, colC = st.columns(3)
-    with colA: chip("Simulation")
-    with colB: chip("Optimisation")
-    with colC: chip("Data Apps")
-    st.write("")
-    colA, colB, colC = st.columns(3)
-    with colA: chip("Python")
-    with colB: chip("MATLAB")
-    with colC: chip("CAD")
+    r1 = st.columns(3)
+    with r1[0]: chip("Simulation")
+    with r1[1]: chip("Optimisation")
+    with r1[2]: chip("Data Apps")
+    r2 = st.columns(3)
+    with r2[0]: chip("Python")
+    with r2[1]: chip("MATLAB")
+    with r2[2]: chip("CAD")
 
 st.divider()
 
-# ---------- METRICS (neutral + concise) ----------
+# =======================================================================
+# METRICS
+# =======================================================================
 m1, m2, m3 = st.columns(3)
 with m1: st.metric("Year 3 Exam Avg", "79%")
 with m2: st.metric("Technical Report", "76%")
 with m3: st.metric("Interactive Tools Shipped", "4+")
 
-# ---------- ABOUT ----------
+# =======================================================================
+# ABOUT
+# =======================================================================
 st.subheader("About")
 st.markdown(
     "Final-year **MEng Mechanical Engineering** student (University of Bath), on track for **First Class**. "
-    "My work blends analytical modelling with practical implementation: simulators, telemetry/data apps, and clean technical documentation."
+    "My work blends analytical modelling with practical implementation: simulators, telemetry/data apps, "
+    "and clear technical documentation."
 )
 
-# ---------- SKILLS (two compact expanders) ----------
-cL, cR = st.columns(2)
-with cL:
+# =======================================================================
+# SKILLS (compact)
+# =======================================================================
+s1, s2 = st.columns(2)
+with s1:
     with st.expander("Technical"):
         st.markdown(
             "- **Programming & Data**: Python (pandas, NumPy, matplotlib, scikit-learn), MATLAB  \n"
-            "- **Modelling & Optimisation**: dynamic systems, Monte Carlo / sensitivity, control basics  \n"
+            "- **Modelling & Optimisation**: dynamic systems, Monte Carlo/sensitivity, control basics  \n"
             "- **Dashboards & Apps**: Streamlit (interactive tools, telemetry-style UIs)  \n"
             "- **Design**: Autodesk Inventor, AutoCAD; documentation & BOM literacy"
         )
-with cR:
+with s2:
     with st.expander("Transferable"):
         st.markdown(
             "- Project leadership & delivery  \n"
@@ -77,7 +104,9 @@ with cR:
 
 st.divider()
 
-# ---------- PROJECTS (cards) ----------
+# =======================================================================
+# PROJECTS (cards)
+# =======================================================================
 st.subheader("Projects")
 st.markdown("<a name='projects'></a>", unsafe_allow_html=True)
 
@@ -86,9 +115,9 @@ with row1[0]:
     card(
         "Interactive Lap Simulation",
         "Monte Carlo–driven simulator to evaluate strategy trade-offs under constraints. "
-        "Includes a fully interactive demo with parameter inputs and telemetry plots.",
+        "Includes an interactive demo with parameter inputs and telemetry plots.",
         "Open",
-        "/Strategy_Simulation"
+        "/Strategy_Simulation",
     )
 with row1[1]:
     card(
@@ -96,7 +125,7 @@ with row1[1]:
         "Data acquisition + visualisation app for live monitoring and post-run analysis. "
         "Improves decision speed and quality during testing.",
         "Open",
-        "/Green_Bath_Racing"
+        "/Green_Bath_Racing",
     )
 with row1[2]:
     card(
@@ -104,7 +133,7 @@ with row1[2]:
         "Hands-on assembly and design work: failure diagnosis, stress calcs, material testing, "
         "and CAD for production tooling.",
         "Open",
-        "/Zikeli_Internship"
+        "/Zikeli_Internship",
     )
 
 row2 = st.columns(3)
@@ -113,28 +142,32 @@ with row2[0]:
         "Data Dashboard",
         "Exploratory analytics with custom visuals and scenario views. Built for fast insight and what-if checks.",
         "Open",
-        "/F1_Strategy_Project"
+        "/F1_Strategy_Project",
     )
 with row2[1]:
     card(
         "Additional Projects",
-        "A small collection of smaller tools and experiments (controls, visualisation, scripting).",
+        "A collection of smaller tools and experiments (controls, visualisation, scripting).",
         "Browse",
-        "/Additional_Projects"
+        "/Additional_Projects",
     )
 with row2[2]:
     st.empty()
 
 st.divider()
 
-# ---------- STUDIES ----------
+# =======================================================================
+# STUDIES
+# =======================================================================
 st.subheader("Studies")
 st.markdown(
     "- **Final-Year Modules**: System Modelling & Simulation, CFD, Composites, Electric Propulsion, Aerodynamics  \n"
     "- Academic work emphasises model validation, sensitivity, and translating results into clear recommendations."
 )
 
-# ---------- FOOTER ----------
+# =======================================================================
+# FOOTER
+# =======================================================================
 st.divider()
 f1, f2 = st.columns([0.7, 0.3])
 with f1:
