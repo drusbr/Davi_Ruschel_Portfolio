@@ -1,87 +1,134 @@
 import streamlit as st
-import pandas as pd
+from datetime import date
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Davi Ruschel — Engineering Portfolio", layout="wide")
 
-st.title("Engineering Portfolio")
+# ---- HERO ----
+colA, colB = st.columns([1.1, 0.9], vertical_alignment="center")
+with colA:
+    st.title("Davi Ruschel")
+    st.markdown(
+        """
+**MEng Mechanical Engineering (Final Year) — University of Bath**  
+Simulation-driven performance engineering, motorsport strategy, and data products.
+"""
+    )
+    st.markdown(
+        """
+- Built a **race strategy simulator** and **real-time telemetry system** used in competition  
+- Contributed to **4th place at Shell Eco-Marathon (Europe & North Africa, 2025)**  
+- Part of setting a **new UK efficiency record** with Green Bath Racing
+"""
+    )
+    c1, c2, c3, c4 = st.columns(4)
+    with c1: st.link_button("📄 View CV", "https://your-cv-link.pdf")
+    with c2: st.link_button("🧠 Strategy Simulator", "/SEM_Simulation")
+    with c3: st.link_button("📊 F1 Dashboard", "/F1_Dashboard")
+    with c4: st.link_button("🛠 Projects", "/Projects")
 
-with st.expander("**Key Highlights of this Portfolio**"):
-    st.write("- Read about me in this page")
-    st.write("- Learn more about my experience in Green Bath Racing as a Race Strategist & Performance Engineer")
-    st.write("- Have a play with the simulation I developed, it allows you to understand what it does more in depth!")
-    st.write("- Read about my internship at Zikeli")
-    st.write("- Explore the F1 Dashboard I developed for personal use on data analysis and race insights.")
-    st.write("- See some other projects I have done over the years")
+with colB:
+    st.image("GBR picture (48).jpeg", caption="Silesia Ring 2025 — Shell Eco-Marathon", use_container_width=True)
 
-fig1_col1, fig1_col2 = st.columns(2)
-with fig1_col1:
-    st.image("GBR picture (48).jpeg", caption="Silesia Ring 2025 - Shell Eco Marathon", use_container_width=True)
+st.divider()
 
-with fig1_col2:
-    st.subheader("About Me")
-    st.markdown("I am a **final-year (MEng) Mechanical Engineering student at the University of Bath**, set to graduate with a **First Class Honours degree**.")
+# ---- QUICK METRICS ----
+m1, m2, m3, m4 = st.columns(4)
+with m1: st.metric("SEM Result (2025)", "4th", help="Europe & North Africa")
+with m2: st.metric("National Record", "UK Efficiency", help="Set with GBR 2025")
+with m3: st.metric("Exam Avg (Y3 S1)", "79%")
+with m4: st.metric("Tech Report (Y3)", "76%", help="Simulation & telemetry")
 
-    st.markdown("I carry a deep passion for motorsport, performance engineering, and simulation-driven strategy.")
-    st.markdown("Over the past few years, I’ve developed hands-on experience through roles in Green Bath Racing, where I built a custom race strategy simulation tool and a real-time telemetry system used in competition. My work contributed to the team’s 4th-place finish at the 2025 Shell Eco-marathon and a new UK national efficiency record.")
-    st.markdown("Beyond technical projects, I thrive in high-pressure environments where engineering decisions matter — especially when they intersect with racecraft, data, and optimisation. My goal is to work in motorsport, particularly in roles focused on vehicle performance, strategy, or data engineering.")
-    st.markdown("This portfolio highlights some of the projects, tools, and experiences that have shaped my journey so far. Thanks for stopping by!")
+# ---- ABOUT (tight) ----
+st.subheader("About Me")
+st.markdown(
+    """
+I’m a final-year MEng at Bath focused on **vehicle performance, simulation, and race strategy**.  
+I build tools that **turn data into decisions** — from Monte Carlo race simulators to real-time telemetry GUIs.  
+Goal: **motorsport performance/strategy**; open to **aerospace/consulting** roles where modelling and decisions matter.
+"""
+)
 
-seccol1, seccol2 = st.columns(2)
+# ---- CORE SKILLS (collapsed by default) ----
+sk1, sk2 = st.columns(2)
+with sk1:
+    with st.expander("Technical"):
+        st.markdown(
+            """
+- **Programming & Data**: Python (pandas, NumPy, matplotlib, scikit-learn), MATLAB  
+- **Simulation/Modelling**: vehicle dynamics, lap simulation, Monte Carlo, control  
+- **CAD/Design**: Autodesk Inventor, AutoCAD  
+- **Dashboards/Apps**: Streamlit, Tkinter; real-time telemetry GUIs
+"""
+        )
+with sk2:
+    with st.expander("Soft & Leadership"):
+        st.markdown(
+            """
+- Team leadership & project delivery (GBR Team Management/Strategy)  
+- Decision-making under pressure (race strategy), stakeholder comms  
+- Entrepreneurship (Baianá events), multilingual (EN/PT, ES professional)
+"""
+        )
 
-st.subheader("Core Skills & Tools")
+# ---- FEATURED PROJECTS (card-like rows) ----
+st.subheader("Featured Work")
+p1, p2 = st.columns(2)
+with p1:
+    st.markdown("### 🧠 Race Strategy Simulator")
+    st.markdown(
+        """
+Probabilistic **Monte Carlo** simulator with tyre degradation, SC events, and pit windows.  
+Used to evaluate strategies pre-race and generate driver guidance.
+"""
+    )
+    st.markdown("[Open project →](/SEM_Simulation)")
+with p2:
+    st.markdown("### 📡 Real-Time Telemetry System")
+    st.markdown(
+        """
+ESP32-based data pipeline to live dashboards; **driver feedback** and post-run analysis.  
+Deployed at SEM; informed decisions contributing to record performance.
+"""
+    )
+    st.markdown("[See build notes →](/Telemetry)")
 
-with st.expander("Technical Skills"):
-    st.markdown("""
-    **Programming & Data Analysis**  
-    Python (pandas, NumPy, matplotlib, seaborn, scikit-learn), MATLAB; experience building dashboards, simulators, and ML models.  
+p3, p4 = st.columns(2)
+with p3:
+    st.markdown("### 🏁 F1 Data & Strategy Dashboard")
+    st.markdown(
+        """
+Interactive Streamlit app for pace deltas, stint models, and pit windows across seasons.  
+Focus on **race insight and decision support**.
+"""
+    )
+    st.markdown("[Explore dashboard →](/F1_Dashboard)")
+with p4:
+    st.markdown("### ✈️ Structural Analysis — Landing Gear Fork")
+    st.markdown(
+        """
+FEA of C152 fork for landing/ground loads; stress concentrations & safety factors.  
+Demonstrates **aerospace-relevant analysis** capability.
+"""
+    )
+    st.markdown("[Read summary →](/Projects#landing-gear)")
 
-    **Simulation & Modelling**  
-    Vehicle dynamics, lap simulation, probabilistic strategy modelling (Monte Carlo, game theory), control systems, and FEA.  
+st.divider()
 
-    **CAD & Design**  
-    Autodesk Inventor, AutoCAD; experience with design-for-assembly and subsystem/component design.  
+# ---- STUDIES (concise + scannable) ----
+st.subheader("Recent Academic Highlights")
+st.markdown(
+    """
+- **Year 3**: 79% exams (S1), **76% Technical Report** (simulation & telemetry)  
+- **Final-Year Modules**: System Modelling & Simulation, CFD, Composites, Electric Propulsion, Aerodynamics
+"""
+)
 
-    **Data Visualisation & Dashboards**  
-    Streamlit, Tkinter; real-time telemetry GUIs and interactive strategy simulators.  
+st.info("I’m currently targeting graduate roles in **vehicle performance & race strategy** (motorsport), and **simulation/data-driven engineering** across aerospace & consulting.")
 
-    **Office & Documentation Tools**  
-    Advanced Microsoft Excel, Word, PowerPoint; experience producing high-level technical documentation and analysis.  
-
-    **Engineering Tools**  
-    Granta EduPack (material selection), stress calculations, mechanical testing, root locus and time-domain system analysis.
-    """)
-
-with st.expander("Soft Skills"):
-    st.markdown("""
-    **Soft & Transferable Skills**  
-    - Team leadership & project management (Team Manager – Green Bath Racing)  
-    - Decision-making under pressure (Shell Eco-marathon race strategy)  
-    - Communication: technical reporting, presentations, stakeholder engagement  
-    - Entrepreneurship: founded and manage a profitable event brand in Bath  
-    - Multilingual: fluent Portuguese & English, professional Spanish  
-    """)
-
-st.subheader("Studies")
-
-st.markdown("""
-Throughout my degree, I’ve focused on continuous improvement. While my first two years were below my own expectations, 
-this challenge drove me to realign my priorities and push for excellence.  
-
-By Year 3, I achieved an **average of 79% in Semester 1 exams** and **76% in my individual Technical Report** 
-(for the Green Bath Racing simulation & telemetry project in Semester 2), finishing the year with a **76% overall average**.  
-These results reflect both resilience and my ability to excel when applying engineering concepts to real-world projects.  
-""")
-
-st.info("""
-Coming into my final year, I have chosen advanced modules that align with goal of pushing the limits and taking on challenges:
-
-- **System Modelling & Simulation**  
-- **Computational Fluid Dynamics**  
-- **Composite Materials**  
-- **Electric Propulsion Systems**  
-- **Aerodynamics**
-""")
-
-st.markdown("""
-This academic foundation equips me with the tools to analyse, optimise, and innovate in data-driven engineering environments.
-""")
+# ---- FOOTER / CONTACT ----
+st.divider()
+cA, cB = st.columns([0.6, 0.4])
+with cA:
+    st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
+with cB:
+    st.caption(f"Last updated: {date.today().isoformat()}")
