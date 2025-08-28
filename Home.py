@@ -80,7 +80,7 @@ with colB:
 st.subheader("Featured Projects")
 p1, p2 = st.columns(2)
 with p1:
-    st.markdown("### 🧠 Simulation & Decision-Support Tool")
+    st.markdown("### 🧠 Lap Simulation & Telemetry System")
     st.markdown(
         """
 Developed a **probabilistic simulator** to evaluate system performance under uncertainty.  
@@ -89,27 +89,27 @@ Applied in a real competition setting with measurable results.
     )
     st.markdown("[Explore →](/Strategy_Simulation)")
 with p2:
-    st.markdown("### 📡 Real-Time Data Platform")
+    st.markdown("### 📡 FEA of a Cessna-152 Landing Gear")
     st.markdown(
         """
-Built a data acquisition and visualisation system for live monitoring and post-run analysis.  
-Improved feedback and optimisation during performance evaluations.  
+Simulated the structural performance of the landing gear fork of a Cessna-152 under landing conditions, and exploring whether the component could withstand hard-landing scenarios. 
+Conducted a material selection procedure for the landing gear fork, using results from the FEA as basis for different values.
 """
     )
     st.markdown("[See more →](/Green_Bath_Racing)")
 
 p3, p4 = st.columns(2)
 with p3:
-    st.markdown("### 📊 Interactive Data Dashboard")
+    st.markdown("### 📊 F1 Monte-Carlo & Probabilistic Simulation")
     st.markdown(
         """
-Created a dashboard analysing thousands of datapoints with custom visualisations.  
-Designed to support decisions and highlight trends.  
+Developed a simulation to model expected outcomes on different races using over 15 million datapoints from previous seasons. 
+Modelling tire degradation, overtakes, crashes, and other stochastic events.
 """
     )
     st.markdown("[View →](/F1_Strategy_Project)")
 with p4:
-    st.markdown("### 🏭 Internship Project — Zikeli (Brazil)")
+    st.markdown("### 🏭 ")
     st.markdown(
         """
 Worked on mechanical design, CAD drawings, and engineering calculations  
@@ -140,3 +140,4 @@ with colF1:
     st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
 with colF2:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
