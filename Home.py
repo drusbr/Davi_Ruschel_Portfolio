@@ -44,12 +44,13 @@ with col1:
     with b3: st.link_button("🧪 Projects", "#projects")
     with b4: st.link_button("✉️ Email", "mailto:you@email.com")
 
-with col2:
     st.image(
         "GBR picture (48).jpeg",
         caption="Engineering project in competition environment",
         use_container_width=True,
     )
+
+with col2:
     st.write("**Focus areas**")
     r1 = st.columns(3)
     with r1[0]: chip("Simulation")
@@ -174,3 +175,4 @@ with f1:
     st.markdown("**Contact** · [LinkedIn](https://linkedin.com/in/your-handle) · [Email](mailto:you@email.com)")
 with f2:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
