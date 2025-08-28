@@ -19,7 +19,7 @@ Simulation-driven performance engineering, motorsport strategy, and data product
 - Contributed to **4th place at Shell Eco-Marathon (Europe & North Africa, 2025)**  
 - Part of setting a **new UK efficiency record** with Green Bath Racing
 """
-    # )
+    )
     # c1, c2, c3, c4 = st.columns(4)
     # with c1: st.link_button("📄 View CV", "https://your-cv-link.pdf")
     # with c2: st.link_button("🧠 Strategy Simulator", "/SEM_Simulation")
@@ -132,4 +132,5 @@ with cA:
     st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
 with cB:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
 
