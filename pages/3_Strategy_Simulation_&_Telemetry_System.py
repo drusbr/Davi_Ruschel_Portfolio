@@ -1026,14 +1026,14 @@ with tab_results:
             ax_v.set_xlabel("Time (s)")
             ax_v.set_ylabel("Velocity (km/h)")
             ax_v.set_title("Velocity Profile")
-            st.pyplot(fig_v, use_container_width=True)
+            st.pyplot(fig_v, use_container_width=False)
         with c2:
             fig_m, ax_m = plt.subplots(figsize=(5, 3))
             ax_m.step(r["dprof"], r["motor_status"], where="post")
             ax_m.set_xlabel("Distance (m)")
             ax_m.set_ylabel("Motor (0=OFF, 1=ON)")
             ax_m.set_title("Motor On/Off")
-            st.pyplot(fig_m, use_container_width=True)
+            st.pyplot(fig_m, use_container_width=False)
 
     # ---- Optimisation results (two laps) ----
     if st.session_state.get("simulation_done", False):
@@ -1059,7 +1059,7 @@ with tab_results:
             ax_velocity.set_ylabel("Velocity (m/s)")
             ax_velocity.set_xlabel("Time (s)")
             ax_velocity.legend()
-            st.pyplot(fig_velocity, use_container_width=True)
+            st.pyplot(fig_velocity, use_container_width=False)
 
             with st.info("Regulations Check"):
                 st.write(f"Average speed = **{average_speed_kph:.2f} km/h** (threshold 25 km/h).")
@@ -1140,7 +1140,7 @@ with tab_results:
                 axes[4].legend()
 
                 axes[-1].set_xlabel("Distance (m)")
-                st.pyplot(fig, use_container_width=True)
+                st.pyplot(fig, use_container_width=False)
 
     # ---- Downloads ----
     st.markdown("---")
@@ -1158,6 +1158,7 @@ with tab_results:
                 st.download_button(label=f"⬇️ {label}", data=open(fname, "rb"), file_name=fname, mime="text/csv")
             else:
                 st.button(f"⬇️ {label}", disabled=True)
+
 
 
 
