@@ -1050,7 +1050,7 @@ with tab_results:
             average_speed_mps = lap_tel_df["VelProfile"].mean()
             average_speed_kph = average_speed_mps * 3.6
 
-            fig_velocity, ax_velocity = plt.subplots(figsize=(7, 3.5))
+            fig_velocity, ax_velocity = plt.subplots(figsize=(4, 3))
             ax_velocity.plot(lap_tel_df["TimeProfile"], lap_tel_df["VelProfile"])
             ax_velocity.axvline(x=lap2_tel["TimeProfile"].iloc[0], color="red", linestyle="--", linewidth=1, label="Lap 2 Start")
             ax_velocity.axhline(y=average_speed_mps, color="green", linestyle="--", linewidth=1, label=f"Avg Speed ({average_speed_kph:.2f} km/h)")
@@ -1159,6 +1159,7 @@ with tab_results:
                 st.download_button(label=f"⬇️ {label}", data=open(fname, "rb"), file_name=fname, mime="text/csv")
             else:
                 st.button(f"⬇️ {label}", disabled=True)
+
 
 
 
