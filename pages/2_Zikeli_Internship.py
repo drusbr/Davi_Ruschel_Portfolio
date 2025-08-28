@@ -1,74 +1,55 @@
 import streamlit as st
 
-st.title("Industry Experience - Zikeli Engineering Internship")
+st.set_page_config(layout="wide")
+st.title("Industry Experience — Engineering Internship at Zikeli")
+
 st.info("""
-In Summer 2025, I completed an engineering internship at Zikeli, a leading manufacturing company specializing in roll-forming machinery and automation systems.
-
-My work covered both mechanical assembly and engineering design, giving me insight into how complex systems go from concept to real-world operation.
+In Summer 2025, I completed an internship at Zikeli Engineering, a manufacturing company specialising in roll-forming machinery and automation systems.  
+My work spanned **mechanical assembly** and **engineering design**, giving me end-to-end exposure to how machines are built, tested, and optimised in an industrial setting.
 """)
 
-st.header("Mechanical Assembly, Jul 2025")
-
-fig_col1, fig_col2, fig_col3 = st.columns(3)
-with fig_col1:
-    st.image("IMG_4815.jpg")
-with fig_col2:
-    st.image("IMG_4853.jpg")
-with fig_col3:
-    st.image("IMG_4865.jpg")
-
-mechAss_col1, mechAss_col2 = st.columns([2, 1])
-
-with mechAss_col1:
-    st.write("During the first phase of my internship, I worked on the shop floor assembling machines, including a roll-forming machine, gearboxes and hydraulic systems. This hands-on exposure gave me a deep appreciation for how engineering designs are translated into functional machinery.")
-    with st.expander("**Experience Output**"):
-        st.markdown("""
-                    - **Assembled complex machinery**, including roll-forming systems, gearboxes, and hydraulic subsystems.
-                    - **Collaborated with technicians** on the shop floor, gaining direct exposure to manufacturing processes and tolerances.
-                    - **Interpreted technical drawings** and BOMs to guide accurate mechnical assembly and system integration.
-                    - **Identified design-for-assembly limitations** and proposed improvements to reduce time and complexity.
-                    - **Developed practical engineering intuition**, understanding how design choices impact real-world assembly and maintenance.
-                    """)
-    
-    st.markdown("""                
-                Being directly involved in the mechnical assembly process - rather than just observing - allowed me to understand the practical constraints of manufacturing. I worked alongside technicians and machinists, and had the opportunity to interact with machining stations, quality control, and testing.
-
-                What stood out most was the value of *design for assembly*. Encountering designs that were difficult to implement pushed me to think about how I would have approached them differently as an engineer. This exposure grounded my design thinking in practicality, and made me a more well-rounded engineer. 
-                """)
-    
-with mechAss_col2:
-    st.image("IMG_4888.jpg")
-
-st.header("Design Engineer & Optimization, Aug 2025")
-
+# ---- MECHANICAL ASSEMBLY ----
+st.subheader("Mechanical Assembly (Jul 2025)")
 st.markdown("""
-After completing the mechanical assembly phase, I moved into the role of **Design Engineer**. 
-This stage of the internship exposed me to the **full cycle of engineering design** — from diagnosing failures on existing equipment 
-to contributing to the creation of entirely new roll-forming machinery.  
-
-One of my first tasks was to investigate recurring saw blade failures on a tube-cutting machine. By carrying out 
-data analysis, I discovered a misalignment between two key components that was causing the saw to experience lateral forces 
-and eventually break. This diagnosis allowed the team to implement corrective measures, preventing further downtime and costs.  
-
-Beyond problem-solving, I was also trusted to contribute directly to new product development. 
-I supported the design of a client’s roll-forming machine, where I ran stress calculations, conducted material testing 
-to assess the suitability of the chosen material, and created CAD models for several critical components. 
-This gave me valuable experience in bridging theoretical calculations with practical machine design.  
+Worked hands-on in the assembly of complex machinery, gaining direct experience of how engineering designs are translated into functional equipment.
 """)
 
-with st.expander("**Experience Output**"):
+col1, col2, col3 = st.columns(3)
+with col1: st.image("IMG_4815.jpg", caption="Roll-forming machine assembly")
+with col2: st.image("IMG_4853.jpg", caption="Gearbox integration")
+with col3: st.image("IMG_4865.jpg", caption="Hydraulic system assembly")
+
+with st.expander("**Key Outputs**"):
     st.markdown("""
-    - **Failure Diagnosis & Data Analysis**: Investigated recurring saw blade failures on a tube-cutting machine. By analysing performance data, I identified a critical misalignment between two components that was causing lateral forces and premature blade breakage, enabling the team to implement corrective measures.  
-
-    - **Roll-Forming Machine Development**: Supported the design of a new roll-forming machine for a client by performing **stress calculations**, conducting **material testing** to validate the suitability of the chosen material, and creating **CAD models** for key components.  
-
-    - **Technical Documentation**: Managed and digitised the company’s archive of technical drawings and maintenance guides for roll-forming machines, improving accessibility and traceability of engineering data.  
-
-    - **System Design Contribution**: Produced a new **technical drawing for the lubrication system** of a tube-forming machine, supporting the company’s design and maintenance documentation.  
+    - **Assembled** roll-forming machines, gearboxes, and hydraulic subsystems on the shop floor  
+    - **Collaborated with technicians** to understand real-world tolerances and manufacturing processes  
+    - **Interpreted technical drawings** and BOMs to ensure accurate assembly  
+    - **Proposed design-for-assembly improvements** to reduce complexity and time  
+    - Gained practical understanding of how **design decisions affect manufacturability and maintenance**
     """)
 
+# ---- DESIGN & OPTIMISATION ----
+st.subheader("Design Engineering & Optimisation (Aug 2025)")
 st.markdown("""
-This stage of my internship strengthened my ability to connect **theory with practice** — from diagnosing mechanical failures 
-to contributing to new machine design. It broadened my perspective as an engineer, giving me a more complete understanding of 
-how design choices affect manufacturing, reliability, and maintenance.
+Transitioned into the design office, contributing to both **failure diagnosis** on existing equipment and **new product development**.
+""")
+
+with st.expander("**Key Outputs**"):
+    st.markdown("""
+    - **Failure Diagnosis**: Investigated recurring saw-blade failures; identified misalignment causing lateral forces → corrective redesign prevented downtime and cost  
+    - **Machine Development**: Supported design of a new roll-forming machine by running **stress calculations**, conducting **material testing**, and producing **CAD models** of key components  
+    - **Documentation & Traceability**: Digitised technical drawings and maintenance guides, improving data accessibility  
+    - **System Design**: Produced a new technical drawing for the lubrication system of a tube-forming machine
+    """)
+
+st.image("IMG_4888.jpg", caption="Design contribution — lubrication system schematic")
+
+# ---- REFLECTION / VALUE ----
+st.subheader("Experience Value")
+st.info("""
+This experience gave me:  
+- First-hand exposure to **how machines are built, tested, and improved** in industry  
+- Confidence in bridging **theoretical calculations with practical design and assembly**  
+- A deeper appreciation of **design-for-manufacture, reliability, and maintainability** principles  
+- Stronger collaboration skills working across technicians, engineers, and designers
 """)
