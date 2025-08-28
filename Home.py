@@ -21,17 +21,8 @@ Focused on **simulation, optimisation, and data-driven engineering solutions**.
 - Delivered projects across academic, team, and industry settings  
 """
     )
-    c1, c2, c3, c4 = st.columns([1, 1, 1, 1])  # equal weights
-    
-    with c1:
-        st.link_button("📄 View CV", "https://your-cv-link.pdf", use_container_width=True)
-    with c2:
-        st.link_button("🧠 Simulation Tool", "/Strategy_Simulation", use_container_width=True)
-    with c3:
-        st.link_button("📊 Data Dashboard", "/F1_Strategy_Project", use_container_width=True)
-    with c4:
-        st.link_button("🛠 Internship Experience", "/Zikeli_Internship", use_container_width=True)
-    
+        
+    st.link_button("📄 View CV", "https://your-cv-link.pdf", use_container_width=True)
 
 with col2:
     st.image("GBR picture (48).jpeg", caption="Engineering project in competition environment", use_container_width=True)
@@ -146,5 +137,6 @@ with colF1:
     st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
 with colF2:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
 
 
