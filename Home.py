@@ -1,179 +1,87 @@
 import streamlit as st
-from datetime import date
+import pandas as pd
 
-st.set_page_config(page_title="Davi Ruschel — Portfolio", layout="wide")
+st.set_page_config(layout="wide")
 
-# ---------- small helpers ----------
-def chip(text):
-    st.markdown(
-        f"""
-        <span style="
-            display:inline-block;
-            padding:4px 10px;
-            border:1px solid #e5e7eb;
-            border-radius:999px;
-            background:#f8fafc;
-            font-size:0.85rem;">
-            {text}
-        </span>
-        """,
-        unsafe_allow_html=True,
-    )
+st.title("Engineering Portfolio")
 
-def card(title, blurb, link_text, link_url):
-    with st.container(border=True):
-        st.markdown(f"### {title}")
-        st.markdown(blurb)
-        st.link_button(link_text, link_url)
+with st.expander("**Key Highlights of this Portfolio**"):
+    st.write("- Read about me in this page")
+    st.write("- Learn more about my experience in Green Bath Racing as a Race Strategist & Performance Engineer")
+    st.write("- Have a play with the simulation I developed, it allows you to understand what it does more in depth!")
+    st.write("- Read about my internship at Zikeli")
+    st.write("- Explore the F1 Dashboard I developed for personal use on data analysis and race insights.")
+    st.write("- See some other projects I have done over the years")
 
-# =======================================================================
-# HERO
-# =======================================================================
-col1, col2 = st.columns([1.25, 1], vertical_alignment="center")
+fig1_col1, fig1_col2 = st.columns(2)
+with fig1_col1:
+    st.image("GBR picture (48).jpeg", caption="Silesia Ring 2025 - Shell Eco Marathon", use_container_width=True)
 
-with col1:
-    st.title("Davi Ruschel")
-    st.markdown(
-        "Engineer focused on **simulation, optimisation, and data-driven tooling**. "
-        "I build models and apps that turn raw data into decisions."
-    )
+with fig1_col2:
+    st.subheader("About Me")
+    st.markdown("I am a **final-year (MEng) Mechanical Engineering student at the University of Bath**, set to graduate with a **First Class Honours degree**.")
 
-    b1, b2, b3, b4 = st.columns(4)
-    with b1: st.link_button("📄 CV", "https://your-cv-link.pdf")
-    with b2: st.link_button("💼 LinkedIn", "https://linkedin.com/in/your-handle")
-    with b3: st.link_button("🧪 Projects", "#projects")
-    with b4: st.link_button("✉️ Email", "mailto:you@email.com")
+    st.markdown("I carry a deep passion for motorsport, performance engineering, and simulation-driven strategy.")
+    st.markdown("Over the past few years, I’ve developed hands-on experience through roles in Green Bath Racing, where I built a custom race strategy simulation tool and a real-time telemetry system used in competition. My work contributed to the team’s 4th-place finish at the 2025 Shell Eco-marathon and a new UK national efficiency record.")
+    st.markdown("Beyond technical projects, I thrive in high-pressure environments where engineering decisions matter — especially when they intersect with racecraft, data, and optimisation. My goal is to work in motorsport, particularly in roles focused on vehicle performance, strategy, or data engineering.")
+    st.markdown("This portfolio highlights some of the projects, tools, and experiences that have shaped my journey so far. Thanks for stopping by!")
 
-with col2:
-    st.write("**Focus areas**")
-    r1 = st.columns(3)
-    with r1[0]: chip("Simulation")
-    with r1[1]: chip("Optimisation")
-    with r1[2]: chip("Data Apps")
-    r2 = st.columns(3)
-    with r2[0]: chip("Python")
-    with r2[1]: chip("MATLAB")
-    with r2[2]: chip("CAD")
+seccol1, seccol2 = st.columns(2)
 
-st.divider()
-st.image(
-        "GBR picture (48).jpeg",
-        caption="Engineering project in competition environment",
-        use_container_width=True,
-    )
-st.divider()
+st.subheader("Core Skills & Tools")
 
-# =======================================================================
-# METRICS
-# =======================================================================
-m1, m2, m3 = st.columns(3)
-with m1: st.metric("Year 3 Exam Avg", "79%")
-with m2: st.metric("Technical Report", "76%")
-with m3: st.metric("Interactive Tools Shipped", "4+")
+with st.expander("Technical Skills"):
+    st.markdown("""
+    **Programming & Data Analysis**  
+    Python (pandas, NumPy, matplotlib, seaborn, scikit-learn), MATLAB; experience building dashboards, simulators, and ML models.  
 
-# =======================================================================
-# ABOUT
-# =======================================================================
-st.subheader("About")
-st.markdown(
-    "Final-year **MEng Mechanical Engineering** student (University of Bath), on track for **First Class**. "
-    "My work blends analytical modelling with practical implementation: simulators, telemetry/data apps, "
-    "and clear technical documentation."
-)
+    **Simulation & Modelling**  
+    Vehicle dynamics, lap simulation, probabilistic strategy modelling (Monte Carlo, game theory), control systems, and FEA.  
 
-# =======================================================================
-# SKILLS (compact)
-# =======================================================================
-s1, s2 = st.columns(2)
-with s1:
-    with st.expander("Technical"):
-        st.markdown(
-            "- **Programming & Data**: Python (pandas, NumPy, matplotlib, scikit-learn), MATLAB  \n"
-            "- **Modelling & Optimisation**: dynamic systems, Monte Carlo/sensitivity, control basics  \n"
-            "- **Dashboards & Apps**: Streamlit (interactive tools, telemetry-style UIs)  \n"
-            "- **Design**: Autodesk Inventor, AutoCAD; documentation & BOM literacy"
-        )
-with s2:
-    with st.expander("Transferable"):
-        st.markdown(
-            "- Project leadership & delivery  \n"
-            "- Decisions under time constraints  \n"
-            "- Clear communication (reports, presentations)  \n"
-            "- Entrepreneurship (founded a profitable events brand)  \n"
-            "- Languages: Portuguese, English, Spanish"
-        )
+    **CAD & Design**  
+    Autodesk Inventor, AutoCAD; experience with design-for-assembly and subsystem/component design.  
 
-st.divider()
+    **Data Visualisation & Dashboards**  
+    Streamlit, Tkinter; real-time telemetry GUIs and interactive strategy simulators.  
 
-# =======================================================================
-# PROJECTS (cards)
-# =======================================================================
-st.subheader("Projects")
-st.markdown("<a name='projects'></a>", unsafe_allow_html=True)
+    **Office & Documentation Tools**  
+    Advanced Microsoft Excel, Word, PowerPoint; experience producing high-level technical documentation and analysis.  
 
-row1 = st.columns(3)
-with row1[0]:
-    card(
-        "Interactive Lap Simulation",
-        "Monte Carlo–driven simulator to evaluate strategy trade-offs under constraints. "
-        "Includes an interactive demo with parameter inputs and telemetry plots.",
-        "Open",
-        "/Strategy_Simulation",
-    )
-with row1[1]:
-    card(
-        "Real-Time Data Platform",
-        "Data acquisition + visualisation app for live monitoring and post-run analysis. "
-        "Improves decision speed and quality during testing.",
-        "Open",
-        "/Green_Bath_Racing",
-    )
-with row1[2]:
-    card(
-        "Industrial Internship",
-        "Hands-on assembly and design work: failure diagnosis, stress calcs, material testing, "
-        "and CAD for production tooling.",
-        "Open",
-        "/Zikeli_Internship",
-    )
+    **Engineering Tools**  
+    Granta EduPack (material selection), stress calculations, mechanical testing, root locus and time-domain system analysis.
+    """)
 
-row2 = st.columns(3)
-with row2[0]:
-    card(
-        "Data Dashboard",
-        "Exploratory analytics with custom visuals and scenario views. Built for fast insight and what-if checks.",
-        "Open",
-        "/F1_Strategy_Project",
-    )
-with row2[1]:
-    card(
-        "Additional Projects",
-        "A collection of smaller tools and experiments (controls, visualisation, scripting).",
-        "Browse",
-        "/Additional_Projects",
-    )
-with row2[2]:
-    st.empty()
+with st.expander("Soft Skills"):
+    st.markdown("""
+    **Soft & Transferable Skills**  
+    - Team leadership & project management (Team Manager – Green Bath Racing)  
+    - Decision-making under pressure (Shell Eco-marathon race strategy)  
+    - Communication: technical reporting, presentations, stakeholder engagement  
+    - Entrepreneurship: founded and manage a profitable event brand in Bath  
+    - Multilingual: fluent Portuguese & English, professional Spanish  
+    """)
 
-st.divider()
-
-# =======================================================================
-# STUDIES
-# =======================================================================
 st.subheader("Studies")
-st.markdown(
-    "- **Final-Year Modules**: System Modelling & Simulation, CFD, Composites, Electric Propulsion, Aerodynamics  \n"
-    "- Academic work emphasises model validation, sensitivity, and translating results into clear recommendations."
-)
 
-# =======================================================================
-# FOOTER
-# =======================================================================
-st.divider()
-f1, f2 = st.columns([0.7, 0.3])
-with f1:
-    st.markdown("**Contact** · [LinkedIn](https://linkedin.com/in/your-handle) · [Email](mailto:you@email.com)")
-with f2:
-    st.caption(f"Last updated: {date.today().isoformat()}")
+st.markdown("""
+Throughout my degree, I’ve focused on continuous improvement. While my first two years were below my own expectations, 
+this challenge drove me to realign my priorities and push for excellence.  
 
+By Year 3, I achieved an **average of 79% in Semester 1 exams** and **76% in my individual Technical Report** 
+(for the Green Bath Racing simulation & telemetry project in Semester 2), finishing the year with a **76% overall average**.  
+These results reflect both resilience and my ability to excel when applying engineering concepts to real-world projects.  
+""")
 
+st.info("""
+Coming into my final year, I have chosen advanced modules that align with goal of pushing the limits and taking on challenges:
+
+- **System Modelling & Simulation**  
+- **Computational Fluid Dynamics**  
+- **Composite Materials**  
+- **Electric Propulsion Systems**  
+- **Aerodynamics**
+""")
+
+st.markdown("""
+This academic foundation equips me with the tools to analyse, optimise, and innovate in data-driven engineering environments.
+""")
