@@ -52,10 +52,11 @@ with st.container():
 
 # ---- KEY OUTCOMES ----
 st.subheader("Key Outcomes")
-st.metric("National Record", "835 km/kWh")
-st.metric("Regional Ranking", "4th place (Europe & North Africa)")
-st.metric("Simulation Accuracy", "±4.3% vs real performance")
-st.metric("Efficiency Improvement", "600 → 835 km/kWh")
+m1, m2, m3, m4 = st.columns(4)
+with m1: st.metric("National Record", "835 km/kWh")
+with m2: st.metric("Regional Ranking", "4th place (Europe & North Africa)")
+with m3: st.metric("Simulation Accuracy", "±4.3% vs real performance")
+with m4: st.metric("Efficiency Improvement", "600 → 835 km/kWh")
 
 # ---- LESSONS ----
 st.subheader("Skills & Lessons Learned")
@@ -88,3 +89,4 @@ with st.expander("Personal Reflection"):
     play out in real time confirmed my passion for applying data and engineering tools  
     to deliver performance improvements.
     """)
+
