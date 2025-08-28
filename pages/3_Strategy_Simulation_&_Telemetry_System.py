@@ -1119,7 +1119,8 @@ with tab_results:
                 ) = simulate_lap_with_initial_velocity(strategy, initial_velocity, dt=0.01, max_time=15000, max_iterations=50000)
 
                 # Plot stack
-                fig, axes = plt.subplots(nrows=5, ncols=1, sharex=True, figsize=(7, 12), tight_layout=True)
+                fig, axes = plt.subplots(nrows=5, ncols=1, sharex=True, figsize=(6, 8), tight_layout=True)
+                plt.subplots_adjust(hspace=0.3)
                 axes[0].plot(distance_profile, velocity_profile, lw=2)
                 axes[0].set_ylabel("Velocity (m/s)")
                 axes[0].set_title(f"{st.session_state.track_name or 'Track'} — {lap_choice} Telemetry")
@@ -1158,6 +1159,7 @@ with tab_results:
                 st.download_button(label=f"⬇️ {label}", data=open(fname, "rb"), file_name=fname, mime="text/csv")
             else:
                 st.button(f"⬇️ {label}", disabled=True)
+
 
 
 
