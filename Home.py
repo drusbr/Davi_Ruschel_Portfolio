@@ -47,10 +47,6 @@ st.markdown(
 I am a **final-year Mechanical Engineering student at Bath**, set to graduate with **First Class Honours**.  
 My focus is building engineering tools that **turn data into decisions**: from Monte Carlo race strategy simulators  
 to telemetry GUIs and structural analysis.
-
-While I am deeply passionate about **motorsport and performance engineering**, my skillset is **domain-flexible** —  
-equally applicable to **aerospace, automotive, and data-driven engineering challenges** where optimisation and  
-decision support are critical.
 """
 )
 
@@ -62,8 +58,7 @@ with colA:
             """
 - **Programming & Data**: Python (pandas, NumPy, scikit-learn, matplotlib), MATLAB  
 - **Simulation/Modelling**: vehicle dynamics, lap simulation, Monte Carlo, control systems  
-- **CAD/Design**: Autodesk Inventor, AutoCAD  
-- **Dashboards/Apps**: Streamlit, Tkinter (real-time GUIs & analytics tools)
+- **CAD/Design**: Autodesk Inventor, AutoCAD 
 """
         )
 with colB:
@@ -73,7 +68,7 @@ with colB:
 - Team leadership & project management (Team Manager, Green Bath Racing)  
 - Decision-making under pressure (competition strategy)  
 - Communication: reporting, presenting, stakeholder engagement  
-- Entrepreneurship: founder of **Baianá** (profitable student events brand)  
+- Entrepreneurship: founder of a profitable student events brand  
 - Languages: Portuguese (native), English (fluent), Spanish (professional)
 """
         )
@@ -142,3 +137,4 @@ with colF1:
     st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
 with colF2:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
