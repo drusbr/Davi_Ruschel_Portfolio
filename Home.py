@@ -1,142 +1,143 @@
 import streamlit as st
 from datetime import date
 
-st.set_page_config(page_title="Davi Ruschel — Engineering Portfolio", layout="wide")
+st.set_page_config(page_title="Davi Ruschel — Portfolio", layout="wide")
 
-# ---- HERO ----
-col1, col2 = st.columns([1.1, 0.9], vertical_alignment="center")
+# ---------- small helpers ----------
+def chip(text):  # simple inline tag
+    st.markdown(f"<span style='padding:4px 8px;border:1px solid #ddd;border-radius:999px;font-size:0.85rem;'>{text}</span>",
+                unsafe_allow_html=True)
 
-with col1:
+def card(title, blurb, link_text, link_url):
+    with st.container(border=True):
+        st.markdown(f"### {title}")
+        st.markdown(blurb)
+        st.link_button(link_text, link_url)
+
+# ---------- HERO ----------
+left, right = st.columns([1.2, 0.8])
+with left:
     st.title("Davi Ruschel")
     st.markdown(
-        """
-**MEng Mechanical Engineering (Final Year) — University of Bath**  
-Focused on **simulation, optimisation, and data-driven engineering solutions**.  
-"""
-    )
-    st.markdown(
-        """
-- Designed **simulation tools** for complex systems and performance evaluation  
-- Built **real-time data acquisition and visualisation platforms**  
-- Delivered projects across academic, team, and industry settings  
-"""
+        "Engineer focused on **simulation, optimisation, and data-driven tooling**. "
+        "I build models and apps that turn raw data into decisions."
     )
     c1, c2, c3, c4 = st.columns(4)
-    with c1: st.link_button("📄 View CV", "https://your-cv-link.pdf")
-    with c2: st.link_button("🧠 Simulation Tool", "/Strategy_Simulation")
-    with c3: st.link_button("📊 Data Dashboard", "/F1_Strategy_Project")
-    with c4: st.link_button("🛠 Internship Experience", "/Zikeli_Internship")
+    with c1: st.link_button("📄 CV", "https://your-cv-link.pdf")
+    with c2: st.link_button("💼 LinkedIn", "https://linkedin.com/in/your-handle")
+    with c3: st.link_button("🧪 Projects", "#projects")
+    with c4: st.link_button("✉️ Email", "mailto:you@email.com")
 
-with col2:
-    st.image("GBR picture (48).jpeg", caption="Engineering project in competition environment", use_container_width=True)
+with right:
+    st.write("**Focus areas**")
+    colA, colB, colC = st.columns(3)
+    with colA: chip("Simulation")
+    with colB: chip("Optimisation")
+    with colC: chip("Data Apps")
+    st.write("")
+    colA, colB, colC = st.columns(3)
+    with colA: chip("Python")
+    with colB: chip("MATLAB")
+    with colC: chip("CAD")
 
 st.divider()
 
-# ---- METRICS ----
-m1, m2, m3, m4 = st.columns(4)
-with m1: st.metric("Competition Result", "4th", help="Delivered with custom tools & strategy")
-with m2: st.metric("Record", "835 km/kWh", help="National efficiency record")
-with m3: st.metric("Exam Avg (Year 3 S1)", "79%")
-with m4: st.metric("Technical Report", "76%", help="Individual project on simulation & data systems")
+# ---------- METRICS (neutral + concise) ----------
+m1, m2, m3 = st.columns(3)
+with m1: st.metric("Year 3 Exam Avg", "79%")
+with m2: st.metric("Technical Report", "76%")
+with m3: st.metric("Interactive Tools Shipped", "4+")
 
-# ---- ABOUT ----
-st.subheader("About Me")
+# ---------- ABOUT ----------
+st.subheader("About")
 st.markdown(
-    """
-I am a **final-year Mechanical Engineering student**, set to graduate with **First Class Honours**.  
-My focus is developing tools that combine **engineering analysis with data-driven decision making**.  
-
-This portfolio highlights the projects, skills, and experiences that shaped my journey —  
-from building simulation models and interactive dashboards to delivering engineering solutions  
-through academic research, group projects, and industry internships.
-"""
+    "Final-year **MEng Mechanical Engineering** student (University of Bath), on track for **First Class**. "
+    "My work blends analytical modelling with practical implementation: simulators, telemetry/data apps, and clean technical documentation."
 )
 
-# ---- SKILLS ----
-colA, colB = st.columns(2)
-with colA:
-    with st.expander("Technical Skills"):
+# ---------- SKILLS (two compact expanders) ----------
+cL, cR = st.columns(2)
+with cL:
+    with st.expander("Technical"):
         st.markdown(
-            """
-- **Programming & Data**: Python (pandas, NumPy, scikit-learn, matplotlib), MATLAB  
-- **Simulation & Modelling**: dynamic systems, probabilistic analysis, optimisation methods  
-- **CAD & Design**: Autodesk Inventor, AutoCAD  
-- **Dashboards & Apps**: Streamlit, Tkinter (real-time GUIs & analytics tools)  
-"""
+            "- **Programming & Data**: Python (pandas, NumPy, matplotlib, scikit-learn), MATLAB  \n"
+            "- **Modelling & Optimisation**: dynamic systems, Monte Carlo / sensitivity, control basics  \n"
+            "- **Dashboards & Apps**: Streamlit (interactive tools, telemetry-style UIs)  \n"
+            "- **Design**: Autodesk Inventor, AutoCAD; documentation & BOM literacy"
         )
-with colB:
-    with st.expander("Transferable Skills"):
+with cR:
+    with st.expander("Transferable"):
         st.markdown(
-            """
-- Team leadership & project management  
-- Decision-making under pressure  
-- Clear technical communication (reports, presentations, stakeholder engagement)  
-- Entrepreneurship: founded and manage a profitable event brand  
-- Multilingual: Portuguese (native), English (fluent), Spanish (professional)  
-"""
+            "- Project leadership & delivery  \n"
+            "- Decisions under time constraints  \n"
+            "- Clear communication (reports, presentations)  \n"
+            "- Entrepreneurship (founded a profitable events brand)  \n"
+            "- Languages: Portuguese, English, Spanish"
         )
 
-# ---- FEATURED PROJECTS ----
-st.subheader("Featured Projects")
-p1, p2 = st.columns(2)
-with p1:
-    st.markdown("### 🧠 Simulation & Decision-Support Tool")
-    st.markdown(
-        """
-Developed a **probabilistic simulator** to evaluate system performance under uncertainty.  
-Applied in a real competition setting with measurable results.  
-"""
-    )
-    st.markdown("[Explore →](/Strategy_Simulation)")
-with p2:
-    st.markdown("### 📡 Real-Time Data Platform")
-    st.markdown(
-        """
-Built a data acquisition and visualisation system for live monitoring and post-run analysis.  
-Improved feedback and optimisation during performance evaluations.  
-"""
-    )
-    st.markdown("[See more →](/Green_Bath_Racing)")
+st.divider()
 
-p3, p4 = st.columns(2)
-with p3:
-    st.markdown("### 📊 Interactive Data Dashboard")
-    st.markdown(
-        """
-Created a dashboard analysing thousands of datapoints with custom visualisations.  
-Designed to support decisions and highlight trends.  
-"""
+# ---------- PROJECTS (cards) ----------
+st.subheader("Projects")
+st.markdown("<a name='projects'></a>", unsafe_allow_html=True)
+
+row1 = st.columns(3)
+with row1[0]:
+    card(
+        "Interactive Lap Simulation",
+        "Monte Carlo–driven simulator to evaluate strategy trade-offs under constraints. "
+        "Includes a fully interactive demo with parameter inputs and telemetry plots.",
+        "Open",
+        "/Strategy_Simulation"
     )
-    st.markdown("[View →](/F1_Strategy_Project)")
-with p4:
-    st.markdown("### 🏭 Internship Project — Zikeli (Brazil)")
-    st.markdown(
-        """
-Worked on mechanical design, CAD drawings, and engineering calculations  
-for components and production tooling in an industrial setting.  
-"""
+with row1[1]:
+    card(
+        "Real-Time Data Platform",
+        "Data acquisition + visualisation app for live monitoring and post-run analysis. "
+        "Improves decision speed and quality during testing.",
+        "Open",
+        "/Green_Bath_Racing"
     )
-    st.markdown("[Read summary →](/Zikeli_Internship)")
+with row1[2]:
+    card(
+        "Industrial Internship",
+        "Hands-on assembly and design work: failure diagnosis, stress calcs, material testing, "
+        "and CAD for production tooling.",
+        "Open",
+        "/Zikeli_Internship"
+    )
+
+row2 = st.columns(3)
+with row2[0]:
+    card(
+        "Data Dashboard",
+        "Exploratory analytics with custom visuals and scenario views. Built for fast insight and what-if checks.",
+        "Open",
+        "/F1_Strategy_Project"
+    )
+with row2[1]:
+    card(
+        "Additional Projects",
+        "A small collection of smaller tools and experiments (controls, visualisation, scripting).",
+        "Browse",
+        "/Additional_Projects"
+    )
+with row2[2]:
+    st.empty()
 
 st.divider()
 
-# ---- STUDIES ----
-st.subheader("Academic Highlights")
+# ---------- STUDIES ----------
+st.subheader("Studies")
 st.markdown(
-    """
-- **Year 3:** 79% (exams, S1) · 76% (individual technical report)  
-- **Final Year Modules:** System Modelling & Simulation, CFD, Composites, Electric Propulsion, Aerodynamics
-"""
+    "- **Final-Year Modules**: System Modelling & Simulation, CFD, Composites, Electric Propulsion, Aerodynamics  \n"
+    "- Academic work emphasises model validation, sensitivity, and translating results into clear recommendations."
 )
 
-st.info(
-    "Currently seeking graduate opportunities where I can apply **simulation, optimisation, and data-driven engineering** to deliver impactful results."
-)
-
-# ---- FOOTER ----
+# ---------- FOOTER ----------
 st.divider()
-colF1, colF2 = st.columns([0.7, 0.3])
-with colF1:
-    st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
-with colF2:
+f1, f2 = st.columns([0.7, 0.3])
+with f1:
+    st.markdown("**Contact** · [LinkedIn](https://linkedin.com/in/your-handle) · [Email](mailto:you@email.com)")
+with f2:
     st.caption(f"Last updated: {date.today().isoformat()}")
