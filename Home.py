@@ -84,7 +84,7 @@ Developed a **probabilistic simulator** to evaluate system performance under unc
 Applied in a real competition setting with measurable results.  
 """
     )
-    st.markdown("[Explore →](/Strategy_Simulation)")
+    
 with p2:
     st.markdown("### 📡 FEA of a Cessna-152 Landing Gear")
     st.markdown(
@@ -93,7 +93,7 @@ Simulated the structural performance of the landing gear fork of a Cessna-152 un
 Conducted a material selection procedure for the landing gear fork, using results from the FEA as basis for different values.
 """
     )
-    st.markdown("[See more →](/Green_Bath_Racing)")
+    
 
 p3, p4 = st.columns(2)
 with p3:
@@ -104,16 +104,15 @@ Developed a simulation to model expected outcomes on different races using over 
 Modelling tire degradation, overtakes, crashes, and other stochastic events.
 """
     )
-    st.markdown("[View →](/F1_Strategy_Project)")
+    
 with p4:
-    st.markdown("### 🏭 ")
+    st.markdown("### 🏎️ Vehicle Performance Test Rig")
     st.markdown(
         """
-Worked on mechanical design, CAD drawings, and engineering calculations  
-for components and production tooling in an industrial setting.  
+Designing a modular, portable dyno capable of replicating track-specific loads (cornering, elevation, resistive forces), enabling off-track vehicle testing.
 """
     )
-    st.markdown("[Read summary →](/Zikeli_Internship)")
+    
 
 st.divider()
 
@@ -137,6 +136,7 @@ with colF1:
     st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
 with colF2:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
 
 
 
