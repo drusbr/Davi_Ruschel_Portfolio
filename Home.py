@@ -31,8 +31,8 @@ st.divider()
 
 # ---- METRICS ----
 m1, m2, m3, m4 = st.columns(4)
-with m1: st.metric("Competition Result", "4th", help="Delivered with custom tools & strategy")
-with m2: st.metric("Record", "835 km/kWh", help="National efficiency record")
+with m1: st.metric("Shell Eco-Marathon 25 Result", "4th", help="Delivered with custom tools & strategy")
+with m2: st.metric("Shell Eco-Marathon Record", "835 km/kWh", help="National efficiency record")
 with m3: st.metric("Exam Avg (Year 3 S1)", "79%")
 with m4: st.metric("Technical Report", "76%", help="Individual project on simulation & data systems")
 
@@ -136,6 +136,7 @@ with colF1:
     st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
 with colF2:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
 
 
 
