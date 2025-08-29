@@ -734,6 +734,40 @@ st.set_page_config(layout="wide")
 
 st.title("Monte Carlo Simulation Analysis")
 
+import streamlit as st
+
+st.title("Monte Carlo Race Strategy Simulator")
+
+# --- Short Intro Blurb ---
+st.markdown(
+    """
+    This project models Formula 1 race outcomes using a **Monte Carlo simulation framework**, 
+    integrating driver pace, tyre degradation, pit stop strategy, overtaking, and safety car events.  
+    The simulator produces **finishing position distributions, win/podium probabilities, and lap-by-lap race visualisations** 
+    across thousands of simulated runs.
+    """
+)
+
+# --- Full Breakdown in Expander ---
+with st.expander("How the Simulation Works"):
+    st.markdown(
+        """
+        The tool integrates multiple modules which build on each other to replicate race strategy complexity:
+
+        - **Driver Pace & Variability** – Base lap times sampled from FastF1 data with statistical noise.  
+        - **Tyre Degradation Model** – Quadratic wear functions tuned with stochastic scaling factors.  
+        - **Fuel & Weight Effects** – Lap times adjusted dynamically based on fuel burn-off.  
+        - **Pit Stop Optimisation** – Strategies generated using stint models, evaluated against pit stop penalties.  
+        - **Decision-Making Logic** – Undercut/overcut attempts, early pit calls, and reaction to traffic.  
+        - **Overtaking Model** – Probabilistic algorithm with DRS effect and follow-loss penalties.  
+        - **Safety Car Events** – Random deployments that reshape pit stop timing and race pace.  
+
+        Together, these modules generate **realistic race outcome distributions** and allow strategic insight 
+        into how small variations in pace, tyre life, or safety cars can completely change the result.
+        """
+    )
+
+
 def run_monte_carlo(num_runs, laps, drivers, race):
     df_laps, df_summary = monte_carlo_safety_car(laps, drivers, race, sims=num_runs, seed=42)
 
@@ -999,3 +1033,4 @@ else:
 
 
     
+
