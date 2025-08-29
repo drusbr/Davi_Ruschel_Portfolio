@@ -22,7 +22,7 @@ Focused on **simulation, optimisation, and data-driven engineering solutions**.
 """
     )
         
-    st.link_button("📄 View CV", "https://Davi Ruschel - CV.pdf", use_container_width=True)
+    st.link_button("📄 View CV", "Davi Ruschel - CV.pdf")
 
 with col2:
     st.image("GBR picture (48).jpeg", caption="Engineering project in competition environment", use_container_width=True)
@@ -137,6 +137,7 @@ with colF1:
     st.markdown("**Contact**: [LinkedIn](https://linkedin.com/in/your-handle) • [Email](mailto:you@email.com)")
 with colF2:
     st.caption(f"Last updated: {date.today().isoformat()}")
+
 
 
 
