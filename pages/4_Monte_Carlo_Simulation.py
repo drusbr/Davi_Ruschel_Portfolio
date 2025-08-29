@@ -736,8 +736,6 @@ st.title("Monte Carlo Simulation Analysis")
 
 import streamlit as st
 
-st.title("Monte Carlo Race Strategy Simulator")
-
 # --- Short Intro Blurb ---
 st.markdown(
     """
@@ -766,6 +764,27 @@ with st.expander("How the Simulation Works"):
         into how small variations in pace, tyre life, or safety cars can completely change the result.
         """
     )
+
+with st.expander("Planned Enhancements & Future Development"):
+    st.markdown(
+        """
+        This project is under continuous development, with several future modules planned to improve realism 
+        and expand its analytical capability:
+
+        - **Weather Effects** 🌧️ – Dynamic track conditions (rain, drying lines, temperature) influencing pace, grip, and tyre wear.  
+        - **Machine Learning Models** 🤖 – Data-driven prediction of pit stop windows and strategy success, trained on historical race data.  
+        - **Driver Error & DNFs** 🚩 – Probabilistic modelling of mistakes (lock-ups, spins, crashes) and mechanical retirements.  
+        - **Virtual Safety Car / Red Flags** 🟥 – More nuanced race control interventions beyond a full safety car.  
+        - **Driver Skill Profiles** 🏎️ – Individualised consistency, aggression, and overtaking ability beyond base lap pace.  
+        - **Track Evolution** 🛣️ – Changing grip levels across the race (rubbering in, marbles, track temperature).  
+        - **Energy Recovery Systems (ERS)** ⚡ – Simulating deployment/harvesting strategies for hybrid power units.  
+        - **Multi-Season AI Benchmarking** 📊 – Comparing predicted strategies with real-world historical races.  
+
+        These additions aim to transform the simulator into a more **holistic race strategy engine**, 
+        bridging data science, vehicle dynamics, and real-world F1 unpredictability.
+        """
+    )
+
 
 
 def run_monte_carlo(num_runs, laps, drivers, race):
@@ -1033,4 +1052,5 @@ else:
 
 
     
+
 
